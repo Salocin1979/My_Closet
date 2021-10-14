@@ -8,7 +8,6 @@ class OutfitsController < ApplicationController
           else
             @outfits = Outfit.all
           end
-        end
     end
      
     def new
