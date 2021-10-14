@@ -8,7 +8,6 @@ class OutfitsController < ApplicationController
           else
             @outfits = Outfit.all
           end
-        end
     end
      
     def new
@@ -17,12 +16,13 @@ class OutfitsController < ApplicationController
     
     def create
         @outfit = Outfit.new(outfit_params)
+        @outfit.user = current_user
         if @outfit.save
           redirect_to outfit_path(@outfit)
         else
           render :new
         end
-      end
+    end
     
     def show
     end
