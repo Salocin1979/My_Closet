@@ -19,7 +19,7 @@ class OutfitsController < ApplicationController
 
     private
 
-  def set_list
+  def set_outfit
     @outfits = Outfit.find(params[:id])
   end
 
