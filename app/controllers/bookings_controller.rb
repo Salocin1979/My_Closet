@@ -5,5 +5,4 @@ class BookingsController < ApplicationController
         @booking.destroy
         redirect_to outfit_path
       end
-
 end

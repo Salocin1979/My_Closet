@@ -1,8 +1,15 @@
 class OutfitsController < ApplicationController
-    def index
-        @outfits = Outfit.all
-    end
+  before_action :set_outfit, only: [:show, :edit, :update, :destroy]
 
+    def index
+          if params[:query].present?
+            @query = params[:query]
+            @outfits = Outfit.where("title LIKE ?","%#{params[:query]}%")
+          else
+            @outfits = Outfit.all
+          end
+        end
+    end
      
     def new
         @outfit = Outfit.new
@@ -16,6 +23,22 @@ class OutfitsController < ApplicationController
           render :new
         end
       end
+    
+    def show
+    end
+
+    def edit
+    end
+
+    def update
+      @outfit.update(outfit_params)
+      redirect_to outfit_path(@outfit)
+    end
+  
+    def destroy
+      @outfit.destroy
+      redirect_to outfits_path
+    end
 
     private
 
