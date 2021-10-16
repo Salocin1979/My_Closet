@@ -1,12 +1,13 @@
 
-<div class="container margin-top-negative">
+<div class="container mt-4">
 
   <div class="row">
     <div class="col-8">
       <div class="outfit-show-card">
         <h1><%= @outfits.title%></h1>
         <p class="outfit-show-address"><%= @outfits.category %></p>
-        <div style="background-image: url('<%= @outfits.picture_url %>');height: 500px;width: 100%;background-size: contain"></div>
+       <!--<div class= outfit-picture style="background-image: url('<%= @outfits.picture_url %>')"></div> %>-->
+       <img class="outfit-picture" src='<%= @outfits.picture_url %>'>
       </div>
       <div class="outfit-show-card">
         <h3>A bit more about this outfit...</h3>
@@ -46,9 +47,8 @@
           <h6 class="no-mb">Share</h6>
 
           <div class="flex">
-            <i class="fa fa-facebook-square fa-2x mr-2"></i>
-            <i class="fa fa-twitter-square fa-2x mr-2"></i>
-            <i class="fa fa-pinterest-square fa-2x mr-2"></i>
+            <i class="fab fa-facebook-square fa-2x mr-2"></i>
+            <i class="fab fa-instagram-square fa-2x mr-2"></i>
             <i class="fa fa-envelope-square fa-2x"></i>
           </div>
         </div>
