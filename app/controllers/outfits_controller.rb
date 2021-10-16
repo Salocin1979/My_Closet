@@ -9,11 +9,11 @@ class OutfitsController < ApplicationController
             @outfits = Outfit.all
           end
     end
-     
+
     def new
         @outfit = Outfit.new
     end
-    
+
     def create
         @outfit = Outfit.new(outfit_params)
         @outfit.user = current_user
@@ -34,7 +34,7 @@ class OutfitsController < ApplicationController
       @outfit.update(outfit_params)
       redirect_to outfit_path(@outfit)
     end
-  
+
     def destroy
       @outfit.destroy
       redirect_to outfits_path
@@ -47,7 +47,7 @@ class OutfitsController < ApplicationController
   end
 
   def outfit_params
-    params.require(:outfit).permit(:title, :category, :description, :price, :user_id)
+    params.require(:outfit).permit(:title, :category, :description, :price, :user_id, :picture_url)
   end
 
 end
