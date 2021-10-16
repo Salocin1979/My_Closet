@@ -1,25 +1,48 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Express yourself</h1>
-    <h1>Contact us</h1>
-    <h1>Order the best outfits around</h1>
-
-    <h3 class="typed-js"></h3>
-  </div>
-</div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Choose or add your best outfits</h3>
-    
-  </div>
+<div class="container mt-3">
   <div class="row">
-    <% @outfits.each do |list| %>
-      <div class="co-12 colsm-6 col-md-4 mb-3">
-        <%= link_to outfit_path(outfit), class:'text-decoration-none' do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= outfit.photo.attached? ? cl_image_path(outfit.photo.key) : asset_path('outfit_background.jpg') %>)">
-            <%= outfit.name %>
+    <div class="col-12">
+      <h1>All the outfits in your closet !</h1>
+    </div>
+  </div>
+
+<div class="btn-primary">
+  <%= link_to 'Add New Outfit', new_outfit_path %>
+</div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> outfits out of our <%= Outfit.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Outfit.count %> outfits.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @outfits.each do |outfit| %>
+      <div class="col-4">
+        <div class="outfit-card">
+          <div class="outfit-card-image" style="background-image: url('<%= outfit.picture_url %>')"></div>
+          <div class="outfit-card-content">
+            <div class="outfit-card-title">
+              <h4><%= outfit.category %></h4>
+            </div>
+            <p><%= outfit.category %></p>
+            <div class="flex">
+              <div class="flex">
+                <i class="material-icons mr-2">people</i><span><%= outfit.description %></span>
+              </div>
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">RS</i> <%= outfit.price %>
+              </div>
+            </div>
           </div>
-        <% end %>
+          <div class="outfi-card-actions">
+            <%= link_to 'More info', outfit_path(outfit) %>
+            <%= link_to 'Edit', edit_outfit_path(outfit), class: 'ml-3 text-warning' %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

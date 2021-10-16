@@ -1,1 +1,75 @@
-// Specific CSS for your home-page
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700');
+
+
+/* Utilities */
+body {
+  margin: 0;
+  font-family: Open Sans;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: white;
+}
+
+.text-center {
+  text-align: center;
+}
+.btn-primary {
+  display: inline-block;
+  background-color: #E44486;
+  padding: 16px 36px;
+  border-radius: 50px;
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid #E44486;
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: #E44486;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.banner h1 {
+  color: white;
+}
+
+.banner p {
+  color: white;
+  opacity: .7;
+  font-size: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #19110C;
+}
+
+.footer a {
+  font-size: 30px;
+  color:  #E44486;
+}
+
+.footer p {
+  color: #6B6C6C;
+}
+
+.footer .fas {
+  color: #BF0F12;
+}
