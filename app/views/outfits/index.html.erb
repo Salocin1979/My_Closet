@@ -3,21 +3,19 @@
     <h1>Express yourself</h1>
     <h1>Contact us</h1>
     <h1>Order the best outfits around</h1>
-
     <h3 class="typed-js"></h3>
   </div>
 </div>
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h3 class="mb-0">Choose or add your best outfits</h3>
-    
   </div>
   <div class="row">
-    <% @outfits.each do |list| %>
+    <% @outfits.each do |outfit| %>
       <div class="co-12 colsm-6 col-md-4 mb-3">
-        <%= link_to outfit_path(outfit), class:'text-decoration-none' do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= outfit.photo.attached? ? cl_image_path(outfit.photo.key) : asset_path('outfit_background.jpg') %>)">
-            <%= outfit.name %>
+        <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>        
+          <div class=“card-category” data-aos=“zoom-in” style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= outfit.picture_url %>) ">
+            <%= outfit.title %>
           </div>
         <% end %>
       </div>
