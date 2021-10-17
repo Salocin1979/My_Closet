@@ -27,11 +27,12 @@
     <i class="material-icons mr-2">RS</i> <%=booking.outfit.price %>
   </div>
   <div class="card-product-infos-delete">
-     <%= link_to @booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
-      <i class='fas fa-trash fa-1x' aria-hidden="true"></i>
+ <%= link_to booking, method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i class="fa fa-trash fa-1x"></i>
    <% end %>
-
   </div>
+
+
 </div>
 <% end %>
 </div>
