@@ -1,0 +1,13 @@
+<h1>Appointments <%= link_to "+ New", new_outfit_booking_path(:outfit_id) %></h1>
+
+
+  
+<% @bookings.each do |booking| %>
+<p>Title: <%= booking.outfit.title %></p>
+
+<div class= outfit-picture style="background-image: url('<%= booking.outfit.picture_url %>')"></div> %>
+  <img class="outfit-picture" src='<%= booking.outfit.picture_url %>'>
+</div>
+<p>Start date: <%= booking.booking_date %></p>
+<p>End date: <%= booking.end_date %></p>
+<% end %>
