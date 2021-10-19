@@ -9,6 +9,10 @@
   <%= link_to 'Add New Outfit', new_outfit_path %>
 </div>
 
+<div class="btn-primary">
+  <%= link_to 'Back to Home', '/' %>
+</div>
+
   <div class="row">
     <div class="col">
       <% if @query %>
@@ -31,7 +35,7 @@
             <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex">
-                <i class="material-icons mr-2">people</i><span><%= outfit.description %></span>
+                <%# <i class="material-icons mr-2">people</i><span><%= outfit.description %></span>
               </div>
               <div class="flex ml-3">
                 <i class="material-icons mr-2">RS</i> <%= outfit.price %>
