@@ -25,6 +25,14 @@ class OutfitsController < ApplicationController
     end
     
     def show
+      @outfit           = Outfit.find(params[:id])
+      @bookings       = @outfit.bookings
+      @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+      end
     end
 
     def edit
