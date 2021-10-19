@@ -1,0 +1,49 @@
+<div class= "bookings_container">
+
+<div class="title_bookings">
+<h1>My Bookings </h1>
+
+<div class="button-shopping">
+<%= link_to "Continue Shopping", outfits_path, class: "btn btn-primary"%>
+</div>
+</div>
+
+
+<div class= "booking_container">
+<% @bookings.each do |booking| %>
+<div class="card-product">
+   <img class="outfit-picture" src='<%= booking.outfit.picture_url %>'>
+  <div class="card-product-infos">
+    <h5><strong><%= booking.outfit.title %></strong></h5>
+    <p><%= booking.outfit.description %></p>
+  </div>
+   <div class="card-product-infos-dates">
+      <h5><strong>Bookings dates:</strong></h5>
+      <p>Start date: <%= booking.booking_date %></p>
+      <p>End date: <%= booking.end_date %></p>
+   </div>
+  <div class="card-product-infos-price">
+  <h5><strong>Price:</strong></h5>
+    <i class="material-icons mr-2">RS</i> <%=booking.outfit.price %>
+  </div>
+  <div class="card-product-infos-delete">
+ <%= link_to booking, method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i class="fa fa-trash fa-1x"></i>
+   <% end %>
+  </div>
+
+
+</div>
+<% end %>
+</div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-envelope-square fa"></i></a>
+  </div>
+</div>
+</div>
