@@ -18,9 +18,25 @@
 
     <div class="col-4">
       <div class="outfit-show-card">
-        <h5>Book this outfit!</h5>
-
-        <form action="">
+        <div class="container">
+          <div class="form-wrapper">
+            <h2>Book an outift</h2>
+              <%= simple_form_for [@outfit, @booking] do |f| %>
+                <%= f.input :start_date, label: "Select your dates:",
+                               as: :string,
+                               required: false,
+                               input_html: { id: "range_start", class: "d-none"} %>
+                <%= f.input :end_date, label: false,
+                             as: :string,
+                             required: false,
+                             input_html: { id: "range_end", class: "d-none" } %>
+                <%= f.button :submit, "Book", class: "btn btn-primary" %>
+              <% end %>
+          </div>
+        </div>
+        
+        <%# <h5>Book this outfit!</h5> %>
+        <%# <form action="">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">From:</span>
             <input type="text" class="form-control" placeholder="12/10/2017" aria-label="email" aria-describedby="basic-addon1">
@@ -30,7 +46,8 @@
             <input type="text" class="form-control" placeholder="18/10/2017" aria-label="email" aria-describedby="basic-addon1">
           </div>
           <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form>
+        </form> %>
+
       <div class="outfit-show-card">
         <h3>Details</h3>
         <div class="flex">
@@ -56,3 +73,5 @@
     </div>
   </div>
 </div>
+
+<div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
