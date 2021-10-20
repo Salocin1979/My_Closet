@@ -1,17 +1,15 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1555836721-6fec17bd948a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+    <div>
       <h1>All the outfits in your closet !</h1>
-    </div>
-  </div>
 
-<div class="btn-primary">
-  <%= link_to 'Add New Outfit', new_outfit_path %>
-</div>
+      <button class="btn-primary">
+        <%= link_to 'Add New Outfit', new_outfit_path %>
+      </button>
 
-<div class="btn-primary">
-  <%= link_to 'Back to Home', '/' %>
-</div>
+      <button class="btn-primary">
+        <%= link_to 'Back to Home', '/' %>
+      </button>
+   </div>
 
   <div class="row">
     <div class="col">
@@ -35,7 +33,7 @@
             <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex">
-                <%# <i class="material-icons mr-2">people</i><span><%= outfit.description %></span>
+                <%# <i class="material-icons mr-2">people</i><span><%= outfit.description %>
               </div>
               <div class="flex ml-3">
                 <i class="material-icons mr-2">RS</i> <%= outfit.price %>

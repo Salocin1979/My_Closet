@@ -1,0 +1,15 @@
+.hero_block{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+  background-color: rgba(30,30,30,0.9);
+  margin-left: 50px;
+  padding: 40px 60px;
+  border-radius: 3px;
+
+  p {
+  margin: 10px 0 40px;
+  }
+}
+

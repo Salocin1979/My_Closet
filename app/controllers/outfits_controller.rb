@@ -2,12 +2,6 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :edit, :update, :destroy]
 
     def index
-          if params[:query].present?
-            @query = params[:query]
-            @outfits = Outfit.where("title LIKE ?","%#{params[:query]}%")
-          else
-            @outfits = Outfit.all
-          end
     end
 
     def new
@@ -23,7 +17,7 @@ class OutfitsController < ApplicationController
           render :new
         end
     end
-    
+
     def show
       @outfit           = Outfit.find(params[:id])
       @bookings       = @outfit.bookings
