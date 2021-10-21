@@ -6,6 +6,7 @@
       <div class="outfit-show-card">
         <h1><%= @outfits.title%></h1>
         <p class="outfit-show-address"><%= @outfits.category %></p>
+
        <!--<div class= outfit-picture style="background-image: url('<%= @outfits.picture_url %>')"></div> %>-->
        <img class="outfit-picture" src='<%= @outfits.picture_url %>'>
       </div>
@@ -33,7 +34,7 @@
               <% end %>
           </div>
         </div>
-        
+
         <%# <h5>Book this outfit!</h5> %>
         <%# <form action="">
           <div class="input-group">
@@ -74,3 +75,4 @@
 </div>
 
 <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+
