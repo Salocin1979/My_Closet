@@ -2,6 +2,7 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :edit, :update, :destroy]
 
     def index
+      @outfits = Outfit.all
     end
 
     def new
