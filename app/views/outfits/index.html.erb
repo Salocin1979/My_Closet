@@ -2,14 +2,10 @@
     <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1555836721-6fec17bd948a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
       <h1>All the outfits in your closet !</h1>
 
-       <div class="btn-primary">
-         <%= link_to 'Add New Outfit', new_outfit_path %>
-      </div>
-
       <div class="btn-primary">
-         <%= link_to '', new_outfit_path %>
+        <%= link_to 'Add New Outfit', new_outfit_path %>
       </div>
-
+ 
       <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -37,8 +33,18 @@
                 <div class="outfit-card-details">
                   <p class="outfit-card-price">RS <%= outfit.price %> / day</p>
                     <div class="outfi-card-actions">
-                      <%= link_to 'More info', outfit_path(outfit) %>
-                      <%= link_to 'Edit', edit_outfit_path(outfit), class: 'ml-3 text-warning' %>
+                      <% if user_signed_in? %>
+                        <li class="nav-item active">
+                          <%= link_to 'More info', outfit_path(outfit) %>
+                        </li>
+                        <li class="nav-item active">
+                          <%= link_to 'Edit', edit_outfit_path(outfit), class: 'ml-3 text-warning' %>
+                        </li>
+                      <% else %>
+                        <li class="nav-item">
+                          <%= link_to "More info", new_user_session_path, class: "nav-link" %>
+                        </li>
+                      <% end %>               
                     </div>
                 </div>
               </div>

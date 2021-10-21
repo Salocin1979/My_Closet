@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :outfits do
     resources :bookings, only: [:new, :create, :show]
   end
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index, :edit, :destroy]
 
 end
