@@ -1,14 +1,28 @@
 .btn-primary {
+  width: max-content;
   display: inline-block;
-  background-color: #1EDD88;
+  background-color: #e44486;
   padding: 16px 36px;
   border-radius: 50px;
   color: white;
+  border: none;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover, &:active {
+    background-color: white;
+    a {
+      color: #e44486;
+    }
+  }
 }
 
 .btn-secondary {
-  border: 1px solid #1EDD88;
+  width: max-content;
+  border: 1px solid #e44486;
   padding: 8px 16px;
   border-radius: 50px;
-  color: #1EDD88;
+  color: #e44486;
 }
