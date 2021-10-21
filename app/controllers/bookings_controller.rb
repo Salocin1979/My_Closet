@@ -11,9 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @outfit = Outfit.find(params[:id])
-    @booking.outfit = @outfit
+    outfit = Outfit.find(params[:outfit_id])
+    @booking = Booking.new(user: current_user, outfit: outfit, start_date: booking_params[:start_date], end_date: booking_params[:end_date])
       if @booking.save
       redirect_to bookings_path
       end
@@ -28,7 +27,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user, :start_date, :end_date, :outfit_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end

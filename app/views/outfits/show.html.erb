@@ -4,15 +4,15 @@
   <div class="row">
     <div class="col-8">
       <div class="outfit-show-card">
-        <h1><%= @outfits.title%></h1>
-        <p class="outfit-show-address"><%= @outfits.category %></p>
+        <h1><%= @outfit.title%></h1>
+        <p class="outfit-show-address"><%= @outfit.category %></p>
 
-       <!--<div class= outfit-picture style="background-image: url('<%= @outfits.picture_url %>')"></div> %>-->
-       <img class="outfit-picture" src='<%= @outfits.picture_url %>'>
+       <!--<div class= outfit-picture style="background-image: url('<%= @outfit.picture_url %>')"></div> %>-->
+       <img class="outfit-picture" src='<%= @outfit.picture_url %>'>
       </div>
       <div class="outfit-show-card">
         <h3>A bit more about this outfit...</h3>
-        <p><%= @outfits.description %></p>
+        <p><%= @outfit.description %></p>
       </div>
     </div>
 
@@ -34,15 +34,15 @@
           <div class="form-wrapper">
             <h2>Book this Outfit</h2>
             <div class="row">
-              <%= simple_form_for [@flat, @booking] do |f| %>
+              <%= simple_form_for [@outfit, @booking] do |f| %>
                 <%= f.input :start_date, label: "Sélectionnez vos dates:",
                                as: :string,
                                required: false,
-                               input_html: { id: "range_start", class:"form-control", placeholder:"MM/DD/YYYY"} %>
+                               input_html: { id: "range_start", class:"form-control", placeholder:"DD/MM/YYYY"} %>
                 <%= f.input :end_date, label: false,
                              as: :string,
                              required: false,
-                             input_html: { id: "range_end", class:"form-control", placeholder:"MM/DD/YYYY"} %>
+                             input_html: { id: "range_end", class:"form-control", placeholder:"DD/MM/YYYY"} %>
                 <%= f.button :submit, "Book", class: "btn btn-primary" %>
               <% end %>
             </div> 
@@ -52,10 +52,10 @@
         <h3>Details</h3>
         <div class="flex">
           <div class="flex">
-            <i class="material-icons mr-2"></i><span><%= @outfits.category %></span>
+            <i class="material-icons mr-2"></i><span><%= @outfit.category %></span>
           </div>
           <div class="flex ml-3">
-            <i class="material-icons mr-2">RS</i> <%= @outfits.price %>
+            <i class="material-icons mr-2">RS</i> <%= @outfit.price %>
           </div>
         </div>
       </div>
