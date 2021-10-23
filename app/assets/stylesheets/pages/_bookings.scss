@@ -1,17 +1,24 @@
-.booking_container {
-    margin-top: 30px;
-}
-
 .title_bookings {
-    border: 10px solid #e44587;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 10px;
     padding-top: 10px;
+    background-color: white;
 }
 
+.body-white{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 10px;
+  background-color: white;
+
+}
 .card-product {
     overflow: hidden;
     height: 120px;
