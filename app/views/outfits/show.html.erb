@@ -21,8 +21,14 @@
             <h2>Book this Outfit</h2>
             <div class="row">
               <%= simple_form_for [@outfit, @booking] do |f| %>
-                <%= f.input :start_date %>
-                <%= f.input :end_date %>
+                <%= f.input :start_date, label: "Sélectionnez vos dates:",
+                               as: :string,
+                               required: false,
+                               input_html: { id: "range_start", class:"form-control", placeholder:"DD/MM/YYYY"} %>
+                <%= f.input :end_date, label: false,
+                             as: :string,
+                             required: false,
+                             input_html: { id: "range_end", class:"form-control", placeholder:"DD/MM/YYYY"} %>
                 <%= f.button :submit, "Book", class: "btn btn-primary" %>
               <% end %>
             </div>
