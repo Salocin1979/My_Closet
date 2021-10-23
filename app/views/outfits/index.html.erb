@@ -1,26 +1,20 @@
 <div class="banner_outfits container-fluid p-5">
-      <h1>All the outfits in your closet !</h1>
-      <div class="pt-5 pb-2"></div>
-      <div>
-         <% if user_signed_in? %>
-           <button class="btn-primary">
-            <%= link_to 'Add New Outfit', new_outfit_path %>
-           </button>
-           <button class="btn-primary">
-            <%= link_to "See my bookings", bookings_path %>
+  <h1>All the outfits in your closet !</h1>
+    <div class="row pt-5 pb-2"></div>
+      <% if user_signed_in? %>
+      <div class="col-sm">
+        <button class="btn-primary"><%= link_to 'Add New Outfit', new_outfit_path %></button>
+        <button class="btn-primary"><%= link_to "See my bookings", bookings_path %></button>
+      </div>
+        <% else %>
+          <button class="btn-primary">
+            <%= link_to "Book my outfit", new_user_session_path, class: "nav-link" %>
           </button>
-          <% else %>
-              <button class="btn-primary">
-                <%= link_to "Book my outfit", new_user_session_path, class: "nav-link" %>
-              </button>
-          <% end %>
-        <p></p>
-        <p></p>
-        <div class="container-fluid">
+        <% end %>
           <div class="row pt-2 pb-5"></div>
-              <div class="col">
-                  <p>All <%= Outfit.count %> outfits.</p>
-              </div>
+            <div class="col">
+              <p>All <%= Outfit.count %> outfits.</p>
+            </div>
           </div>
         </div>
       </div>
