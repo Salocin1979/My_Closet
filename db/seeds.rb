@@ -11,7 +11,7 @@ User.destroy_all
 puts "Database cleaned"
 
 puts "Creating a user in the database..."
-user_one = User.create!(first_name: "nicolas", last_name: "bagnath", email: "nicolas.bagnath@gmail.com", password:"123456")
+user_one = User.create!(first_name: "jean - pierre", last_name: "dupuche", email: "jeanpierre@gmail.com", password:"123456")
 
 puts "Creating the outfit in the database..."
 Outfit.create!  title: "ASOS",
