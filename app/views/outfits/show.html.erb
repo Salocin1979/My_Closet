@@ -6,8 +6,6 @@
       <div class="outfit-show-card">
         <h1><%= @outfit.title%></h1>
         <p class="outfit-show-address"><%= @outfit.category %></p>
-
-       <!--<div class= outfit-picture style="background-image: url('<%= @outfit.picture_url %>')"></div> %>-->
        <img class="outfit-picture" src='<%= @outfit.picture_url %>'>
       </div>
       <div class="outfit-show-card">
@@ -18,18 +16,6 @@
 
     <div class="col-4">
       <div class="outfit-show-card">
-        <%# <h5>Book this outfit!</h5>
-         <form action="">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">From:</span>
-            <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-label="email" aria-describedby="basic-addon1">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">To:</span>
-            <input type="text" class="form-control" placeholder="MM/DD/YYYY" aria-label="email" aria-describedby="basic-addon1">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%"> %>
-        <%# </form> %>
         <div class="container">
           <div class="form-wrapper">
             <h2>Book this Outfit</h2>
@@ -45,7 +31,7 @@
                              input_html: { id: "range_end", class:"form-control", placeholder:"DD/MM/YYYY"} %>
                 <%= f.button :submit, "Book", class: "btn btn-primary" %>
               <% end %>
-            </div> 
+            </div>
           </div>
         </div>
       <div class="outfit-show-card">

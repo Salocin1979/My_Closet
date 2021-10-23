@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "Home", class: "navbar-brand" do %>
     <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <%= image_tag "https://www.graphicsprings.com/filestorage/stencils/7a0dcc38c57d7746e456c1c6af88b735.png?width=500&height=500" %>
     <% end %>
@@ -16,8 +16,11 @@
           <%= link_to "Home", "/", class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Booking", bookings_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Outfits', outfits_path, class: "nav-link" %>
-        </li> 
+        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://avatars.githubusercontent.com/u/85604983?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -27,6 +30,12 @@
           </div>
         </li>
       <% else %>
+        <li class="nav-item">
+          <%= link_to 'Outfits', outfits_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
