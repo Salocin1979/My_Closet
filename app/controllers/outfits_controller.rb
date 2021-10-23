@@ -22,12 +22,7 @@ class OutfitsController < ApplicationController
     def show
       @booking        = Booking.new
       @bookings       = @outfit.bookings
-      @bookings_dates = @bookings.map do |booking|
-      {
-        from: booking.start_date,
-        to:   booking.end_date
-      }
-      end
+      
     end
 
     def edit
